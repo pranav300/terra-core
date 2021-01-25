@@ -2,7 +2,7 @@ Terra.describeViewports('Button', ['tiny'], () => {
   describe('Neutral', () => {
     it('displays default neutral Button', () => {
       browser.url('/raw/tests/terra-button/button/variants/neutral-button');
-      browser.moveToObject('#root', 0, 700); // move cursor to remove focus styles
+      $('#root').moveTo({ xOffset: 0, yOffset: 700 }); // move cursor to remove focus styles
 
       Terra.validates.element('default', { selector: '#neutral' });
     });
@@ -109,7 +109,7 @@ Terra.describeViewports('Button', ['tiny'], () => {
     it('displays default utility Button', () => {
       browser.url('/raw/tests/terra-button/button/variants/utility-button');
 
-      Terra.validates.element({ selector: '#utility' });
+      Terra.validates.element('default', { selector: '#utility' });
     });
 
     it('displays utility Button with keyboard focus', () => {
@@ -128,7 +128,7 @@ Terra.describeViewports('Button', ['tiny'], () => {
 
   it('displays Button with long text', () => {
     browser.url('/raw/tests/terra-button/button/long-text-button');
-    browser.moveToObject('#root');
+    $('#root').moveTo();
 
     Terra.validates.element('long text', { selector: '#long-text' });
   });
@@ -136,7 +136,7 @@ Terra.describeViewports('Button', ['tiny'], () => {
   describe('Button Types', () => {
     before(() => {
       browser.url('/raw/tests/terra-button/button/button-types');
-      browser.moveToObject('#root');
+      $('#root').moveTo();
     });
 
     it('displays type reset', () => {
@@ -155,7 +155,7 @@ Terra.describeViewports('Button', ['tiny'], () => {
   describe('displays Button with Icon', () => {
     before(() => {
       browser.url('/raw/tests/terra-button/button/icon-button');
-      browser.moveToObject('#root');
+      $('#root').moveTo();
     });
 
     it('displays icon and text', () => {
@@ -173,7 +173,7 @@ Terra.describeViewports('Button', ['tiny'], () => {
 
   it('displays compact Button', () => {
     browser.url('/raw/tests/terra-button/button/compact-button');
-    browser.moveToObject('#root');
+    $('#root').moveTo();
 
     Terra.validates.element('compact', { selector: '#compactButton' });
   });
@@ -184,7 +184,7 @@ Terra.describeViewports('Button', ['tiny'], () => {
     });
 
     it('displays programmatic focus on Button 2', () => {
-      browser.click('#button1');
+      $('#button1').click();
 
       Terra.validates.element('focused Button 2');
     });
@@ -195,19 +195,17 @@ Terra.describeViewports('Button', ['tiny'], () => {
     });
 
     it('displays programmatic focus on Button 2', () => {
-      browser.click('#button3');
+      $('#button3').click();
       Terra.validates.element('Button 3 clicked without focus styles');
-    });
 
-    browser.execute(() => {
-      expect(document.querySelector('#button3').to.equal(document.activeElement));
+      expect($('#button3').isFocused()).toEqual(true);
     });
   });
 
   describe('Dismissing Modal should focus the button', () => {
     it('displays Button with focus', () => {
       browser.url('/raw/tests/terra-button/button/button-modal-focus');
-      browser.click('#modal-open-button');
+      $('#modal-open-button').click();
       browser.pause(300);
 
       Terra.validates.element('Button has focus');
@@ -226,7 +224,7 @@ Terra.describeViewports('Button', ['tiny'], () => {
     });
 
     it('disables button', () => {
-      browser.click('#programmaticDisabledButton');
+      $('#programmaticDisabledButton').click();
 
       Terra.validates.element('Button is Disabled', { selector: '#root' });
     });
@@ -239,13 +237,13 @@ Terra.describeViewports('Button', ['tiny'], () => {
 
     it('disables button', () => {
       browser.keys(['Tab']);
-      browser.click('#programmaticDisabledButton1');
+      $('#programmaticDisabledButton1').click();
       Terra.validates.element('Button is disabled', { selector: '#root' });
     });
 
     it('enables button', () => {
       browser.keys(['Tab']);
-      browser.click('#programmaticDisabledButton2');
+      $('#programmaticDisabledButton2').click();
       Terra.validates.element('Enabled Button is not focused', { selector: '#root' });
     });
   });
