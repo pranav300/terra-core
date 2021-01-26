@@ -13,7 +13,7 @@ Terra.describeViewports('List', ['medium'], () => {
     });
 
     it('should Hover on ListItem', () => {
-      browser.moveToObject('#selectable-item');
+      $('#selectable-item').moveTo();
 
       Terra.validates.element('hover');
     });
