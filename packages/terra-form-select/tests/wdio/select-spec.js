@@ -19,7 +19,7 @@ Terra.describeViewports('Select', ['tiny'], () => {
     });
 
     it('default should open the dropdown by clicking the toggle', () => {
-      browser.click('#maxHeight:last-child');
+      $('#maxHeight:last-child').click();
 
       Terra.validates.element('open-dropdown-max-height', { selector: '#root' });
     });
@@ -35,7 +35,7 @@ Terra.describeViewports('Select', ['tiny'], () => {
     before(() => browser.url('/raw/tests/terra-form-select/form-select/uncontrolled-default-long-text'));
 
     it('default should open the dropdown by clicking the toggle', () => {
-      browser.click('[data-terra-select]');
+      $('[data-terra-select]').click();
 
       Terra.validates.element('open-dropdown', { selector: '#root' });
     });
@@ -66,7 +66,7 @@ Terra.describeViewports('Select', ['tiny'], () => {
 
     describe('default should open dropdown by click', () => {
       it('default should open the dropdown by clicking the select', () => {
-        browser.click('[data-terra-select]');
+        $('[data-terra-select]').click();
       });
 
       it('dropdown menu should be focused', async () => {
@@ -77,7 +77,7 @@ Terra.describeViewports('Select', ['tiny'], () => {
         Terra.validates.element('open-dropdown', { selector: '#root' });
       });
 
-      after(() => browser.click('#root'));
+      after(() => $('#root').click());
     });
 
     describe('default should open dropdown by spacebar key press', () => {
@@ -97,7 +97,7 @@ Terra.describeViewports('Select', ['tiny'], () => {
         Terra.validates.element('open-dropdown', { selector: '#root' });
       });
 
-      after(() => browser.click('#root'));
+      after(() => $('#root').click());
     });
 
     describe('default should open dropdown by down arrow key press', () => {
@@ -117,7 +117,7 @@ Terra.describeViewports('Select', ['tiny'], () => {
         Terra.validates.element('open-dropdown', { selector: '#root' });
       });
 
-      after(() => browser.click('#root'));
+      after(() => $('#root').click());
     });
 
     describe('default should not open dropdown by enter key press', () => {
@@ -140,14 +140,14 @@ Terra.describeViewports('Select', ['tiny'], () => {
 
     describe('default should close when clicking off of the select', () => {
       it('default should open the dropdown by clicking the select', () => {
-        browser.click('[data-terra-select]');
-        browser.moveToObject('#terra-select-option-green'); // add to ensure consistent hover styles
+        $('[data-terra-select]').click();
+        $('#terra-select-option-green').moveTo(); // add to ensure consistent hover styles
 
         Terra.validates.element('opened-dropdown', { selector: '#root' });
       });
 
       it('default should close the dropdown by clicking off the select', () => {
-        browser.click('#root');
+        $('#root').click();
       });
 
       it('select should not be focused', async () => {
@@ -161,14 +161,14 @@ Terra.describeViewports('Select', ['tiny'], () => {
 
     describe('default should close when clicking off of the select after being opened by toggle icon', () => {
       it('default should open the dropdown by clicking the select toggle icon', () => {
-        browser.click('[data-terra-form-select-toggle]');
-        browser.moveToObject('#terra-select-option-green'); // add to ensure consistent hover styles
+        $('[data-terra-form-select-toggle]').click();
+        $('#terra-select-option-green').moveTo(); // add to ensure consistent hover styles
 
         Terra.validates.element('toggle-opened-dropdown', { selector: '#root' });
       });
 
       it('default should close the dropdown by clicking off the select', () => {
-        browser.click('#root');
+        $('#root').click();
       });
 
       it('select should not be focused', async () => {
@@ -182,7 +182,7 @@ Terra.describeViewports('Select', ['tiny'], () => {
 
     describe('default should close when pressing tab key to shift focus away from select', () => {
       it('default should close the dropdown when tabbing focus away from the select', () => {
-        browser.click('[data-terra-select]');
+        $('[data-terra-select]').click();
         browser.keys('Tab');
       });
 
@@ -197,7 +197,7 @@ Terra.describeViewports('Select', ['tiny'], () => {
 
     describe('default should close when clicking on toggle icon when select is open', () => {
       it('default should open on click', () => {
-        browser.click('[data-terra-select]');
+        $('[data-terra-select]').click();
       });
 
       it('dropdown should be focused', async () => {
@@ -205,7 +205,7 @@ Terra.describeViewports('Select', ['tiny'], () => {
       });
 
       it('default should close on toggle icon click', () => {
-        browser.click('[data-terra-form-select-toggle]');
+        $('[data-terra-form-select-toggle]').click();
       });
 
       it('select should be focused', async () => {
@@ -218,8 +218,8 @@ Terra.describeViewports('Select', ['tiny'], () => {
 
     describe('default should open and close the dropdown by clicking on the select', () => {
       it('default should open on click', () => {
-        browser.click('[data-terra-select]');
-        browser.moveToObject('#terra-select-option-green'); // add to ensure consistent hover styles
+        $('[data-terra-select]').click();
+        $('#terra-select-option-green').moveTo(); // add to ensure consistent hover styles
       });
 
       it('dropdown should be focused', async () => {
@@ -231,7 +231,7 @@ Terra.describeViewports('Select', ['tiny'], () => {
       });
 
       it('default should close on subsequent click', () => {
-        browser.click('[data-terra-select]');
+        $('[data-terra-select]').click();
       });
 
       it('select should be focused', async () => {
@@ -245,8 +245,8 @@ Terra.describeViewports('Select', ['tiny'], () => {
 
     describe('default should open and close the dropdown by clicking on toggle icon', () => {
       it('default should open the dropdown by clicking the select toggle icon', () => {
-        browser.click('[data-terra-form-select-toggle]');
-        browser.moveToObject('#terra-select-option-green'); // add to ensure consistent hover styles
+        $('[data-terra-form-select-toggle]').click();
+        $('#terra-select-option-green').moveTo(); // add to ensure consistent hover styles
       });
 
       it('dropdown should be focused', async () => {
@@ -258,7 +258,7 @@ Terra.describeViewports('Select', ['tiny'], () => {
       });
 
       it('default should close the dropdown by clicking the select toggle icon again', () => {
-        browser.click('[data-terra-form-select-toggle]');
+        $('[data-terra-form-select-toggle]').click();
       });
 
       it('select should be focused', async () => {
@@ -272,8 +272,8 @@ Terra.describeViewports('Select', ['tiny'], () => {
 
     describe('default should select an option by click', () => {
       it('default should select the first option', () => {
-        browser.click('[data-terra-select]');
-        browser.click('#terra-select-option-blue');
+        $('[data-terra-select]').click();
+        $('#terra-select-option-blue').click();
       });
 
       it('select should be focused', async () => {
@@ -284,13 +284,13 @@ Terra.describeViewports('Select', ['tiny'], () => {
         Terra.validates.element('selected-option', { selector: '#root' });
       });
 
-      after(() => browser.click('#root'));
+      after(() => $('#root').click());
     });
 
     describe('default should select an option by click after clicking on toggle icon', () => {
       it('default should select the first option', () => {
-        browser.click('[data-terra-form-select-toggle]');
-        browser.click('#terra-select-option-blue');
+        $('[data-terra-form-select-toggle]').click();
+        $('#terra-select-option-blue').click();
       });
 
       it('select should be focused', async () => {
@@ -301,12 +301,12 @@ Terra.describeViewports('Select', ['tiny'], () => {
         Terra.validates.element('toggle-icon-selected-option', { selector: '#root' });
       });
 
-      after(() => browser.click('#root'));
+      after(() => $('#root').click());
     });
 
     describe('default should select an option by pressing enter', () => {
       it('default should open the dropdown by clicking the toggle', () => {
-        browser.click('[data-terra-select]');
+        $('[data-terra-select]').click();
       });
 
       it('should display open dropdown', () => {
@@ -328,30 +328,30 @@ Terra.describeViewports('Select', ['tiny'], () => {
 
     describe('default should open dropdown by click after initial selection', () => {
       it('default should open the dropdown by clicking the select', () => {
-        browser.click('[data-terra-select]');
-        browser.click('#terra-select-option-blue');
-        browser.click('[data-terra-select]');
+        $('[data-terra-select]').click();
+        $('#terra-select-option-blue').click();
+        $('[data-terra-select]').click();
       });
 
       it('should display open dropdown after selection', () => {
         Terra.validates.element('open-dropdown-after-selection', { selector: '#root' });
       });
 
-      after(() => browser.click('#root'));
+      after(() => $('#root').click());
     });
 
     describe('default should open dropdown and ensure selected option is hovered', () => {
       it('default should open the dropdown by clicking the select', () => {
-        browser.click('[data-terra-select]');
-        browser.click('#root');
-        browser.click('[data-terra-select]');
+        $('[data-terra-select]').click();
+        $('#root').click();
+        $('[data-terra-select]').click();
       });
 
       it('should display hovered selected option', () => {
         Terra.validates.element('default-selected-and-hovered', { selector: '#root' });
       });
 
-      after(() => browser.click('#root'));
+      after(() => $('#root').click());
     });
   });
 
@@ -359,15 +359,15 @@ Terra.describeViewports('Select', ['tiny'], () => {
     before(() => browser.url('/raw/tests/terra-form-select/form-select/multiple-default-select'));
     describe('default should close all dropdown and open the selected dropdown', () => {
       it('default should open the dropdown by clicking the select and close other dropdown', () => {
-        browser.click('[class*=left-select]');
-        browser.click('[class*=right-select]');
+        $('[class*=left-select]').click();
+        $('[class*=right-select]').click();
       });
 
       it('should close and open dropdown after selection', () => {
         Terra.validates.element('close-and-open-dropdown-after-selection', { selector: '#root' });
       });
 
-      after(() => browser.click('#root'));
+      after(() => $('#root').click());
     });
   });
 
@@ -389,7 +389,7 @@ Terra.describeViewports('Select', ['tiny'], () => {
         Terra.validates.element('selected-option', { selector: '#root' });
       });
 
-      after(() => browser.click('#root'));
+      after(() => $('#root').click());
     });
 
     describe('default should select an option by alternative keyboard interaction', () => {
@@ -407,13 +407,13 @@ Terra.describeViewports('Select', ['tiny'], () => {
         Terra.validates.element('selected-option', { selector: '#root' });
       });
 
-      after(() => browser.click('#root'));
+      after(() => $('#root').click());
     });
 
     describe('default controlled should select an option by click', () => {
       it('default controlled should open the dropdown by clicking the toggle icon', () => {
-        browser.click('[data-terra-form-select-toggle]');
-        browser.moveToObject('#terra-select-option-blue'); // add to ensure consistent hover styles
+        $('[data-terra-form-select-toggle]').click();
+        $('#terra-select-option-blue').moveTo(); // add to ensure consistent hover styles
       });
 
       it('dropdown should be focused', async () => {
@@ -425,7 +425,7 @@ Terra.describeViewports('Select', ['tiny'], () => {
       });
 
       it('default controlled should select the first option', () => {
-        browser.click('#terra-select-option-blue');
+        $('#terra-select-option-blue').click();
       });
 
       it('select should be focused', async () => {
@@ -436,7 +436,7 @@ Terra.describeViewports('Select', ['tiny'], () => {
         Terra.validates.element('selected-option');
       });
 
-      after(() => browser.click('#root'));
+      after(() => $('#root').click());
     });
 
     describe('default should select second option by keyboard interaction', () => {
@@ -478,7 +478,7 @@ Terra.describeViewports('Select', ['tiny'], () => {
         Terra.validates.element('default');
       });
 
-      after(() => browser.click('#root'));
+      after(() => $('#root').click());
     });
 
     describe('combobox should gain focus when tabbed to', () => {
@@ -492,7 +492,7 @@ Terra.describeViewports('Select', ['tiny'], () => {
         Terra.validates.element('tab-focus', { selector: '#root' });
       });
 
-      after(() => browser.click('#root'));
+      after(() => $('#root').click());
     });
 
     describe('combobox should open dropdown by down arrow key press', () => {
@@ -512,7 +512,7 @@ Terra.describeViewports('Select', ['tiny'], () => {
         Terra.validates.element('open-dropdown', { selector: '#root' });
       });
 
-      after(() => browser.click('#root'));
+      after(() => $('#root').click());
     });
 
     describe('combobox should open dropdown by spacebar key press', () => {
@@ -539,7 +539,7 @@ Terra.describeViewports('Select', ['tiny'], () => {
       after(() => {
         // remove backspace that is added to the input. Bug logged here: https://github.com/cerner/terra-core/issues/2414
         browser.keys('Backspace');
-        browser.click('#root');
+        $('#root').click();
       });
     });
 
@@ -563,7 +563,7 @@ Terra.describeViewports('Select', ['tiny'], () => {
 
     describe('combobox should close when clicking off of the select', () => {
       it('combobox should open the dropdown by clicking the select', () => {
-        browser.click('[data-terra-select]');
+        $('[data-terra-select]').click();
       });
 
       it('should display open dropdown', () => {
@@ -571,7 +571,7 @@ Terra.describeViewports('Select', ['tiny'], () => {
       });
 
       it('combobox should close the dropdown by clicking off the select', () => {
-        browser.click('#root');
+        $('#root').click();
       });
 
       it('combobox should not be focused', async () => {
@@ -589,7 +589,7 @@ Terra.describeViewports('Select', ['tiny'], () => {
 
     describe('combobox should close when clicking off of the select after being opened by toggle icon', () => {
       it('combobox should open the dropdown by clicking the select toggle icon', () => {
-        browser.click('[data-terra-form-select-toggle]');
+        $('[data-terra-form-select-toggle]').click();
       });
 
       it('should display toggle-opened dropdown', () => {
@@ -597,7 +597,7 @@ Terra.describeViewports('Select', ['tiny'], () => {
       });
 
       it('combobox should close the dropdown by clicking off the select', () => {
-        browser.click('#root');
+        $('#root').click();
       });
 
       it('combobox should not be focused', async () => {
@@ -615,7 +615,7 @@ Terra.describeViewports('Select', ['tiny'], () => {
 
     describe('combobox should close when pressing tab key to shift focus away from select', () => {
       it('combobox should close the dropdown when tabbing focus away from the select', () => {
-        browser.click('[data-terra-select]');
+        $('[data-terra-select]').click();
         browser.keys('Tab');
       });
 
@@ -635,7 +635,7 @@ Terra.describeViewports('Select', ['tiny'], () => {
 
     describe('combobox should close when clicking on toggle icon when select is open', () => {
       it('combobox should open on click', () => {
-        browser.click('[data-terra-select]');
+        $('[data-terra-select]').click();
       });
 
       it('combobox input should be focused', async () => {
@@ -643,7 +643,7 @@ Terra.describeViewports('Select', ['tiny'], () => {
       });
 
       it('combobox should close on toggle icon click', () => {
-        browser.click('[data-terra-form-select-toggle]');
+        $('[data-terra-form-select-toggle]').click();
       });
 
       it('should display closed select', () => {
@@ -653,7 +653,7 @@ Terra.describeViewports('Select', ['tiny'], () => {
 
     describe('combobox should open and close the dropdown by clicking on toggle icon', () => {
       it('combobox should open the dropdown by clicking the select toggle icon', () => {
-        browser.click('[data-terra-form-select-toggle]');
+        $('[data-terra-form-select-toggle]').click();
       });
 
       it('should display toggle icon open dropdown', () => {
@@ -661,14 +661,14 @@ Terra.describeViewports('Select', ['tiny'], () => {
       });
 
       it('combobox should close the dropdown by clicking the select toggle icon again', () => {
-        browser.click('[data-terra-form-select-toggle]');
+        $('[data-terra-form-select-toggle]').click();
       });
 
       it('should display toggle icon closed dropdown', () => {
         Terra.validates.element('toggle-icon-closed-dropdown', { selector: '#root' });
       });
 
-      after(() => browser.click('#root'));
+      after(() => $('#root').click());
     });
 
     describe('combobox should select an option by keyboard interaction', () => {
@@ -682,8 +682,8 @@ Terra.describeViewports('Select', ['tiny'], () => {
 
     describe('combobox should select an option by click after clicking on toggle icon', () => {
       it('combobox should select the first option', () => {
-        browser.click('[data-terra-form-select-toggle]');
-        browser.click('#terra-select-option-blue');
+        $('[data-terra-form-select-toggle]').click();
+        $('#terra-select-option-blue').click();
       });
 
       it('combobox input should be focused', async () => {
@@ -696,7 +696,7 @@ Terra.describeViewports('Select', ['tiny'], () => {
 
       after(() => {
         browser.keys(['Backspace', 'Backspace', 'Backspace', 'Backspace']); // remove selected option
-        browser.click('#root');
+        $('#root').click();
       });
     });
 
@@ -717,7 +717,7 @@ Terra.describeViewports('Select', ['tiny'], () => {
 
       after(() => {
         browser.keys(['Backspace', 'Backspace', 'Backspace', 'Backspace']); // remove selected option
-        browser.click('#root');
+        $('#root').click();
       });
     });
 
@@ -750,7 +750,7 @@ Terra.describeViewports('Select', ['tiny'], () => {
 
       after(() => {
         browser.keys(['Backspace', 'Backspace', 'Backspace', 'Backspace', 'Backspace']); // remove selected option
-        browser.click('#root');
+        $('#root').click();
       });
     });
 
@@ -760,7 +760,7 @@ Terra.describeViewports('Select', ['tiny'], () => {
       });
 
       it('combobox should open the dropdown by clicking the toggle', () => {
-        browser.click('#combobox:last-child');
+        $('#combobox:last-child').click();
       });
 
       it('should display open dropdown', () => {
@@ -768,7 +768,7 @@ Terra.describeViewports('Select', ['tiny'], () => {
       });
 
       it('combobox should select the first option', () => {
-        browser.click('#terra-select-option-blue');
+        $('#terra-select-option-blue').click();
       });
 
       it('should display selected option', () => {
@@ -777,7 +777,7 @@ Terra.describeViewports('Select', ['tiny'], () => {
 
       after(() => {
         browser.keys(['Backspace', 'Backspace', 'Backspace', 'Backspace']); // remove selected option
-        browser.click('#root');
+        $('#root').click();
       });
     });
 
@@ -787,7 +787,7 @@ Terra.describeViewports('Select', ['tiny'], () => {
       });
 
       it('combobox should open the dropdown by clicking the toggle', () => {
-        browser.click('#combobox:last-child ');
+        $('#combobox:last-child ').click();
       });
 
       it('should display open dropdown', () => {
@@ -804,7 +804,7 @@ Terra.describeViewports('Select', ['tiny'], () => {
 
       after(() => {
         browser.keys(['Backspace', 'Backspace', 'Backspace', 'Backspace']); // remove selected option
-        browser.click('#root');
+        $('#root').click();
       });
     });
 
@@ -814,7 +814,7 @@ Terra.describeViewports('Select', ['tiny'], () => {
       });
 
       it('combobox should open the dropdown by clicking the toggle', () => {
-        browser.click('#combobox:last-child');
+        $('#combobox:last-child').click();
       });
 
       it('should display open dropdown', () => {
@@ -840,16 +840,16 @@ Terra.describeViewports('Select', ['tiny'], () => {
 
     describe('combobox should hover first option after reopening while clicking root to close', () => {
       it('default should open the dropdown by clicking the select', () => {
-        browser.click('[data-terra-select]');
-        browser.click('#root');
-        browser.click('[data-terra-select]');
+        $('[data-terra-select]').click();
+        $('#root').click();
+        $('[data-terra-select]').click();
       });
 
       it('should hover first option after reopening while clicking root to close', () => {
         Terra.validates.element('open-dropdown-hover-check', { selector: '#root' });
       });
 
-      after(() => browser.click('#root'));
+      after(() => $('#root').click());
     });
   });
 
@@ -864,7 +864,7 @@ Terra.describeViewports('Select', ['tiny'], () => {
       });
 
       it('combobox controlled should open the dropdown by clicking the toggle', () => {
-        browser.click('#combobox:last-child');
+        $('#combobox:last-child').click();
       });
 
       it('should display open dropdown', () => {
@@ -872,7 +872,7 @@ Terra.describeViewports('Select', ['tiny'], () => {
       });
 
       it('combobox controlled should select the first option', () => {
-        browser.click('#terra-select-option-blue');
+        $('#terra-select-option-blue').click();
       });
 
       it('should display selected option', () => {
@@ -914,7 +914,7 @@ Terra.describeViewports('Select', ['tiny'], () => {
 
     describe('is touch accessible combobox should open when clicking on it', () => {
       it('should open on click', () => {
-        browser.click('[data-terra-select]');
+        $('[data-terra-select]').click();
         Terra.validates.element('default');
       });
 
@@ -934,7 +934,7 @@ Terra.describeViewports('Select', ['tiny'], () => {
         Terra.validates.element('closed');
       });
 
-      after(() => browser.click('#root'));
+      after(() => $('#root').click());
     });
 
     describe('multiple should gain focus when tabbed to', () => {
@@ -950,7 +950,7 @@ Terra.describeViewports('Select', ['tiny'], () => {
         Terra.validates.element('tab-focus', { selector: '#root' });
       });
 
-      after(() => browser.click('#root'));
+      after(() => $('#root').click());
     });
 
     describe('multiple should open dropdown by spacebar key press', () => {
@@ -970,7 +970,7 @@ Terra.describeViewports('Select', ['tiny'], () => {
         Terra.validates.element('open-dropdown', { selector: '#root' });
       });
 
-      after(() => browser.click('#root'));
+      after(() => $('#root').click());
     });
 
     describe('multiple should open dropdown by down arrow key press', () => {
@@ -990,7 +990,7 @@ Terra.describeViewports('Select', ['tiny'], () => {
         Terra.validates.element('open-dropdown', { selector: '#root' });
       });
 
-      after(() => browser.click('#root'));
+      after(() => $('#root').click());
     });
 
     describe('multiple should not open dropdown by enter key press', () => {
@@ -1013,7 +1013,7 @@ Terra.describeViewports('Select', ['tiny'], () => {
 
     describe('multiple should close when clicking off of the select', () => {
       it('multiple should open the dropdown by clicking the select', () => {
-        browser.click('[data-terra-select]');
+        $('[data-terra-select]').click();
       });
 
       it('should display open dropdown', () => {
@@ -1021,7 +1021,7 @@ Terra.describeViewports('Select', ['tiny'], () => {
       });
 
       it('multiple should close the dropdown by clicking off the select', () => {
-        browser.click('#root');
+        $('#root').click();
       });
 
       it('multiple should not be focused', async () => {
@@ -1039,7 +1039,7 @@ Terra.describeViewports('Select', ['tiny'], () => {
 
     describe('multiple should close when clicking off of the select after being opened by toggle icon', () => {
       it('multiple should open the dropdown by clicking the select toggle icon', () => {
-        browser.click('[data-terra-form-select-toggle]');
+        $('[data-terra-form-select-toggle]').click();
       });
 
       it('should display toggle opened dropdown', () => {
@@ -1047,7 +1047,7 @@ Terra.describeViewports('Select', ['tiny'], () => {
       });
 
       it('multiple should close the dropdown by clicking off the select', () => {
-        browser.click('#root');
+        $('#root').click();
       });
 
       it('multiple should not be focused', () => {
@@ -1065,7 +1065,7 @@ Terra.describeViewports('Select', ['tiny'], () => {
 
     describe('multiple should close when pressing tab key to shift focus away from select', () => {
       it('multiple should close the dropdown when tabbing focus away from the select', () => {
-        browser.click('[data-terra-select]');
+        $('[data-terra-select]').click();
         browser.keys('Tab');
       });
 
@@ -1085,7 +1085,7 @@ Terra.describeViewports('Select', ['tiny'], () => {
 
     describe('multiple should close when clicking on toggle icon when select is open', () => {
       it('multiple should open on click', () => {
-        browser.click('[data-terra-select]');
+        $('[data-terra-select]').click();
       });
 
       it('multiple input should be focused', async () => {
@@ -1093,7 +1093,7 @@ Terra.describeViewports('Select', ['tiny'], () => {
       });
 
       it('multiple should close on toggle icon click', () => {
-        browser.click('[data-terra-form-select-toggle]');
+        $('[data-terra-form-select-toggle]').click();
       });
 
       it('should display closed select', () => {
@@ -1103,7 +1103,7 @@ Terra.describeViewports('Select', ['tiny'], () => {
 
     describe('multiple should open and close the dropdown by clicking on toggle icon', () => {
       it('multiple should open the dropdown by clicking the select toggle icon', () => {
-        browser.click('[data-terra-form-select-toggle]');
+        $('[data-terra-form-select-toggle]').click();
       });
 
       it('should display toggle icon opened dropdown', () => {
@@ -1111,14 +1111,14 @@ Terra.describeViewports('Select', ['tiny'], () => {
       });
 
       it('multiple should close the dropdown by clicking the select toggle icon again', () => {
-        browser.click('[data-terra-form-select-toggle]');
+        $('[data-terra-form-select-toggle]').click();
       });
 
       it('should display toggle icon closed dropdown', () => {
         Terra.validates.element('toggle-icon-closed-dropdown', { selector: '#root' });
       });
 
-      after(() => browser.click('#root'));
+      after(() => $('#root').click());
     });
 
     describe('multiple should select an option by keyboard interaction', () => {
@@ -1138,7 +1138,7 @@ Terra.describeViewports('Select', ['tiny'], () => {
 
       after(() => {
         browser.keys(['Backspace']); // remove selected option
-        browser.click('#root');
+        $('#root').click();
       });
     });
 
@@ -1159,7 +1159,7 @@ Terra.describeViewports('Select', ['tiny'], () => {
 
       after(() => {
         browser.keys(['Backspace']); // remove selected option
-        browser.click('#root');
+        $('#root').click();
       });
     });
 
@@ -1192,7 +1192,7 @@ Terra.describeViewports('Select', ['tiny'], () => {
 
       after(() => {
         browser.keys(['Backspace']); // remove selected option
-        browser.click('#root');
+        $('#root').click();
       });
     });
 
@@ -1202,7 +1202,7 @@ Terra.describeViewports('Select', ['tiny'], () => {
       });
 
       it('multiple should open the dropdown by clicking the toggle', () => {
-        browser.click('[data-terra-select-combobox]');
+        $('[data-terra-select-combobox]').click();
       });
 
       it('should display open dropdown', () => {
@@ -1210,7 +1210,7 @@ Terra.describeViewports('Select', ['tiny'], () => {
       });
 
       it('multiple should select the first option', () => {
-        browser.click('#terra-select-option-blue');
+        $('#terra-select-option-blue').click();
       });
 
       it('should display selected option', () => {
@@ -1219,7 +1219,7 @@ Terra.describeViewports('Select', ['tiny'], () => {
 
       after(() => {
         browser.keys(['Backspace']); // remove selected option
-        browser.click('#root');
+        $('#root').click();
       });
     });
 
@@ -1229,7 +1229,7 @@ Terra.describeViewports('Select', ['tiny'], () => {
       });
 
       it('multiple should open the dropdown by clicking the toggle', () => {
-        browser.click('[data-terra-select-combobox]');
+        $('[data-terra-select-combobox]').click();
       });
 
       it('should display open dropdown', () => {
@@ -1246,23 +1246,23 @@ Terra.describeViewports('Select', ['tiny'], () => {
 
       after(() => {
         browser.keys(['Backspace']); // remove selected option
-        browser.click('#root');
+        $('#root').click();
         browser.refresh();
       });
     });
 
     describe('multiple should hover first option after reopening while clicking root to close', () => {
       it('default should open the dropdown by clicking the select', () => {
-        browser.click('[data-terra-select]');
-        browser.click('#root');
-        browser.click('[data-terra-select]');
+        $('[data-terra-select]').click();
+        $('#root').click();
+        $('[data-terra-select]').click();
       });
 
       it('should hover first option after reopening while clicking root to close', () => {
         Terra.validates.element('open-dropdown-hover-check', { selector: '#root' });
       });
 
-      after(() => browser.click('#root'));
+      after(() => $('#root').click());
     });
   });
 
@@ -1277,7 +1277,7 @@ Terra.describeViewports('Select', ['tiny'], () => {
       });
 
       it('multiple controlled should open the dropdown by clicking the toggle', () => {
-        browser.click('[data-terra-select-combobox]');
+        $('[data-terra-select-combobox]').click();
       });
 
       it('should display open dropdown', () => {
@@ -1285,7 +1285,7 @@ Terra.describeViewports('Select', ['tiny'], () => {
       });
 
       it('multiple controlled should select the first option', () => {
-        browser.click('#terra-select-option-blue');
+        $('#terra-select-option-blue').click();
       });
 
       it('should display selected option', () => {
@@ -1371,7 +1371,7 @@ Terra.describeViewports('Select', ['tiny'], () => {
 
     describe('is touch accessible multiple should open when clicking on it', () => {
       it('should open on click', () => {
-        browser.click('[data-terra-select]');
+        $('[data-terra-select]').click();
       });
 
       it('should display open dropdown', () => {
@@ -1394,7 +1394,7 @@ Terra.describeViewports('Select', ['tiny'], () => {
         Terra.validates.element('closed');
       });
 
-      after(() => browser.click('#root'));
+      after(() => $('#root').click());
     });
 
     describe('search should gain focus when tabbed to', () => {
@@ -1410,7 +1410,7 @@ Terra.describeViewports('Select', ['tiny'], () => {
         Terra.validates.element('tab-focus', { selector: '#root' });
       });
 
-      after(() => browser.click('#root'));
+      after(() => $('#root').click());
     });
 
     describe('search should open dropdown by spacebar key press', () => {
@@ -1430,7 +1430,7 @@ Terra.describeViewports('Select', ['tiny'], () => {
         Terra.validates.element('open-dropdown', { selector: '#root' });
       });
 
-      after(() => browser.click('#root'));
+      after(() => $('#root').click());
     });
 
     describe('search should open dropdown by down arrow key press', () => {
@@ -1450,7 +1450,7 @@ Terra.describeViewports('Select', ['tiny'], () => {
         Terra.validates.element('open-dropdown', { selector: '#root' });
       });
 
-      after(() => browser.click('#root'));
+      after(() => $('#root').click());
     });
 
     describe('search should not open dropdown by enter key press', () => {
@@ -1473,7 +1473,7 @@ Terra.describeViewports('Select', ['tiny'], () => {
 
     describe('search should close when clicking off of the select', () => {
       it('search should open the dropdown by clicking the select', () => {
-        browser.click('[data-terra-select]');
+        $('[data-terra-select]').click();
       });
 
       it('should display open dropdown', () => {
@@ -1481,7 +1481,7 @@ Terra.describeViewports('Select', ['tiny'], () => {
       });
 
       it('search should close the dropdown by clicking off the select', () => {
-        browser.click('#root');
+        $('#root').click();
       });
 
       it('search should not be focused', async () => {
@@ -1499,7 +1499,7 @@ Terra.describeViewports('Select', ['tiny'], () => {
 
     describe('search should close when clicking off of the select after being opened by toggle icon', () => {
       it('search should open the dropdown by clicking the select toggle icon', () => {
-        browser.click('[data-terra-form-select-toggle]');
+        $('[data-terra-form-select-toggle]').click();
       });
 
       it('should display toggle opened dropdown', () => {
@@ -1507,7 +1507,7 @@ Terra.describeViewports('Select', ['tiny'], () => {
       });
 
       it('search should close the dropdown by clicking off the select', () => {
-        browser.click('#root');
+        $('#root').click();
       });
 
       it('search should not be focused', async () => {
@@ -1525,7 +1525,7 @@ Terra.describeViewports('Select', ['tiny'], () => {
 
     describe('search should close when pressing tab key to shift focus away from select', () => {
       it('search should close the dropdown when tabbing focus away from the select', () => {
-        browser.click('[data-terra-select]');
+        $('[data-terra-select]').click();
         browser.keys('Tab');
       });
 
@@ -1545,7 +1545,7 @@ Terra.describeViewports('Select', ['tiny'], () => {
 
     describe('search should close when clicking on toggle icon when select is open', () => {
       it('search should open on click', () => {
-        browser.click('[data-terra-select]');
+        $('[data-terra-select]').click();
       });
 
       it('search input should be focused', async () => {
@@ -1553,7 +1553,7 @@ Terra.describeViewports('Select', ['tiny'], () => {
       });
 
       it('search should close on toggle icon click', () => {
-        browser.click('[data-terra-form-select-toggle]');
+        $('[data-terra-form-select-toggle]').click();
       });
 
       it('should display closed select', () => {
@@ -1563,7 +1563,7 @@ Terra.describeViewports('Select', ['tiny'], () => {
 
     describe('search should open and close the dropdown by clicking on toggle icon', () => {
       it('search should open the dropdown by clicking the select toggle icon', () => {
-        browser.click('[data-terra-form-select-toggle]');
+        $('[data-terra-form-select-toggle]').click();
       });
 
       it('should display toggle icon open dropdown', () => {
@@ -1571,14 +1571,14 @@ Terra.describeViewports('Select', ['tiny'], () => {
       });
 
       it('search should close the dropdown by clicking the select toggle icon again', () => {
-        browser.click('[data-terra-form-select-toggle]');
+        $('[data-terra-form-select-toggle]').click();
       });
 
       it('should display toggle icon closed dropdown', () => {
         Terra.validates.element('toggle-icon-closed-dropdown', { selector: '#root' });
       });
 
-      after(() => browser.click('#root'));
+      after(() => $('#root').click());
     });
 
     describe('search should select an option by keyboard interaction', () => {
@@ -1603,8 +1603,8 @@ Terra.describeViewports('Select', ['tiny'], () => {
 
     describe('search should select an option by click after clicking on toggle icon', () => {
       it('search should select the first option', () => {
-        browser.click('[data-terra-select]');
-        browser.click('#terra-select-option-blue');
+        $('[data-terra-select]').click();
+        $('#terra-select-option-blue').click();
       });
 
       it('search input should be focused', async () => {
@@ -1682,14 +1682,14 @@ Terra.describeViewports('Select', ['tiny'], () => {
       });
 
       it('search should open the dropdown by clicking the toggle', () => {
-        browser.click('#search:last-child');
+        $('#search:last-child').click();
       });
       it('should display open dropdown', () => {
         Terra.validates.element('open-dropdown', { selector: '#root' });
       });
 
       it('search should select the first option', () => {
-        browser.click('#terra-select-option-blue');
+        $('#terra-select-option-blue').click();
       });
 
       it('should display selected option', () => {
@@ -1703,7 +1703,7 @@ Terra.describeViewports('Select', ['tiny'], () => {
 
     describe('search should display no matching results when free text is entered and no matching option exists', () => {
       it('search should open the dropdown by clicking the toggle', () => {
-        browser.click('#search:last-child');
+        $('#search:last-child').click();
       });
 
       it('search should enter a free text entry that does not match', () => {
@@ -1723,7 +1723,7 @@ Terra.describeViewports('Select', ['tiny'], () => {
       });
 
       it('search should open the dropdown by clicking the toggle', () => {
-        browser.click('#search:last-child');
+        $('#search:last-child').click();
       });
 
       it('should display open dropdown', () => {
@@ -1745,15 +1745,15 @@ Terra.describeViewports('Select', ['tiny'], () => {
 
     describe('search should hover first option after reopening while clicking root to close', () => {
       it('default should open the dropdown by clicking the select', () => {
-        browser.click('[data-terra-select]');
-        browser.click('#root');
-        browser.click('[data-terra-select]');
+        $('[data-terra-select]').click();
+        $('#root').click();
+        $('[data-terra-select]').click();
       });
       it('should hover first option after reopening while clicking root to close', () => {
         Terra.validates.element('open-dropdown-hover-check', { selector: '#root' });
       });
 
-      after(() => browser.click('#root'));
+      after(() => $('#root').click());
     });
   });
 
@@ -1768,8 +1768,8 @@ Terra.describeViewports('Select', ['tiny'], () => {
       });
 
       it('search controlled should open the dropdown by clicking the toggle', () => {
-        browser.click('#search:last-child');
-        browser.moveToObject('#terra-select-option-blue');
+        $('#search:last-child').click();
+        $('#terra-select-option-blue').moveTo();
       });
 
       it('should display open dropdown', () => {
@@ -1777,7 +1777,7 @@ Terra.describeViewports('Select', ['tiny'], () => {
       });
 
       it('search controlled should select the first option', () => {
-        browser.click('#terra-select-option-blue');
+        $('#terra-select-option-blue').click();
       });
 
       it('should display selected option', () => {
@@ -1819,7 +1819,7 @@ Terra.describeViewports('Select', ['tiny'], () => {
 
     describe('is touch accessible search should open when clicking on it', () => {
       it('should open on click', () => {
-        browser.click('[data-terra-select]');
+        $('[data-terra-select]').click();
       });
 
       it('should display open dropdown', () => {
@@ -1842,7 +1842,7 @@ Terra.describeViewports('Select', ['tiny'], () => {
         Terra.validates.element('closed');
       });
 
-      after(() => browser.click('#root'));
+      after(() => $('#root').click());
     });
 
     describe('tag should gain focus when tabbed to', () => {
@@ -1858,7 +1858,7 @@ Terra.describeViewports('Select', ['tiny'], () => {
         Terra.validates.element('tab-focus', { selector: '#root' });
       });
 
-      after(() => browser.click('#root'));
+      after(() => $('#root').click());
     });
 
     describe('tag should open dropdown by spacebar key press', () => {
@@ -1878,7 +1878,7 @@ Terra.describeViewports('Select', ['tiny'], () => {
         Terra.validates.element('open-dropdown', { selector: '#root' });
       });
 
-      after(() => browser.click('#root'));
+      after(() => $('#root').click());
     });
 
     describe('tag should open dropdown by down arrow key press', () => {
@@ -1898,7 +1898,7 @@ Terra.describeViewports('Select', ['tiny'], () => {
         Terra.validates.element('open-dropdown', { selector: '#root' });
       });
 
-      after(() => browser.click('#root'));
+      after(() => $('#root').click());
     });
 
     describe('tag should not open dropdown by enter key press', () => {
@@ -1921,7 +1921,7 @@ Terra.describeViewports('Select', ['tiny'], () => {
 
     describe('tag should close when clicking off of the select', () => {
       it('tag should open the dropdown by clicking the select', () => {
-        browser.click('[data-terra-select]');
+        $('[data-terra-select]').click();
       });
 
       it('should display toggle opened dropdown', () => {
@@ -1929,7 +1929,7 @@ Terra.describeViewports('Select', ['tiny'], () => {
       });
 
       it('tag should close the dropdown by clicking off the select', () => {
-        browser.click('#root');
+        $('#root').click();
       });
 
       it('tag should not be focused', async () => {
@@ -1947,7 +1947,7 @@ Terra.describeViewports('Select', ['tiny'], () => {
 
     describe('tag should close when pressing tab key to shift focus away from select', () => {
       it('tag should close the dropdown when tabbing focus away from the select', () => {
-        browser.click('[data-terra-select]');
+        $('[data-terra-select]').click();
         browser.keys('Tab');
       });
 
@@ -1967,7 +1967,7 @@ Terra.describeViewports('Select', ['tiny'], () => {
 
     describe('tag should close when clicking on toggle icon when select is open', () => {
       it('tag should open on click', () => {
-        browser.click('[data-terra-select]');
+        $('[data-terra-select]').click();
       });
 
       it('tag input should be focused', async () => {
@@ -1975,7 +1975,7 @@ Terra.describeViewports('Select', ['tiny'], () => {
       });
 
       it('tag should close on toggle icon click', () => {
-        browser.click('[data-terra-form-select-toggle]');
+        $('[data-terra-form-select-toggle]').click();
       });
 
       it('should display closed select', () => {
@@ -1985,7 +1985,7 @@ Terra.describeViewports('Select', ['tiny'], () => {
 
     describe('tag should open and close the dropdown by clicking on toggle icon', () => {
       it('tag should open the dropdown by clicking the select toggle icon', () => {
-        browser.click('[data-terra-form-select-toggle]');
+        $('[data-terra-form-select-toggle]').click();
       });
 
       it('should display open dropdown', () => {
@@ -1993,14 +1993,14 @@ Terra.describeViewports('Select', ['tiny'], () => {
       });
 
       it('tag should close the dropdown by clicking the select toggle icon again', () => {
-        browser.click('[data-terra-form-select-toggle]');
+        $('[data-terra-form-select-toggle]').click();
       });
 
       it('should display closed dropdown', () => {
         Terra.validates.element('toggle-icon-closed-dropdown', { selector: '#root' });
       });
 
-      after(() => browser.click('#root'));
+      after(() => $('#root').click());
     });
 
     describe('tag should select an option by keyboard interaction', () => {
@@ -2020,7 +2020,7 @@ Terra.describeViewports('Select', ['tiny'], () => {
 
       after(() => {
         browser.keys(['Backspace']); // remove selected option
-        browser.click('#root');
+        $('#root').click();
       });
     });
 
@@ -2041,7 +2041,7 @@ Terra.describeViewports('Select', ['tiny'], () => {
 
       after(() => {
         browser.keys(['Backspace']); // remove selected option
-        browser.click('#root');
+        $('#root').click();
       });
     });
 
@@ -2074,7 +2074,7 @@ Terra.describeViewports('Select', ['tiny'], () => {
 
       after(() => {
         browser.keys(['Backspace']); // remove selected option
-        browser.click('#root');
+        $('#root').click();
       });
     });
 
@@ -2084,7 +2084,7 @@ Terra.describeViewports('Select', ['tiny'], () => {
       });
 
       it('tag should open the dropdown by clicking the toggle', () => {
-        browser.click('[data-terra-select-combobox]');
+        $('[data-terra-select-combobox]').click();
       });
 
       it('should display open dropdown', () => {
@@ -2092,7 +2092,7 @@ Terra.describeViewports('Select', ['tiny'], () => {
       });
 
       it('tag should select the first option', () => {
-        browser.click('#terra-select-option-blue');
+        $('#terra-select-option-blue').click();
       });
 
       it('should display selected option', () => {
@@ -2101,7 +2101,7 @@ Terra.describeViewports('Select', ['tiny'], () => {
 
       after(() => {
         browser.keys(['Backspace']); // remove selected option
-        browser.click('#root');
+        $('#root').click();
       });
     });
 
@@ -2115,7 +2115,7 @@ Terra.describeViewports('Select', ['tiny'], () => {
       });
 
       it('tag should open the dropdown by clicking the toggle', () => {
-        browser.click('[data-terra-select-combobox]');
+        $('[data-terra-select-combobox]').click();
       });
 
       it('should display open dropdown', () => {
@@ -2132,7 +2132,7 @@ Terra.describeViewports('Select', ['tiny'], () => {
 
       after(() => {
         browser.keys(['Backspace']); // remove selected option
-        browser.click('#root');
+        $('#root').click();
       });
     });
 
@@ -2142,7 +2142,7 @@ Terra.describeViewports('Select', ['tiny'], () => {
       });
 
       it('tag should open the dropdown by clicking the toggle', () => {
-        browser.click('[data-terra-select-combobox]');
+        $('[data-terra-select-combobox]').click();
       });
 
       it('should display open dropdown', () => {
@@ -2168,16 +2168,16 @@ Terra.describeViewports('Select', ['tiny'], () => {
 
     describe('tag should hover first option after reopening while clicking root to close', () => {
       it('default should open the dropdown by clicking the select', () => {
-        browser.click('[data-terra-select]');
-        browser.click('#root');
-        browser.click('[data-terra-select]');
+        $('[data-terra-select]').click();
+        $('#root').click();
+        $('[data-terra-select]').click();
       });
 
       it('should hover first option after reopening while clicking root to close', () => {
         Terra.validates.element('open-dropdown-hover-check', { selector: '#root' });
       });
 
-      after(() => browser.click('#root'));
+      after(() => $('#root').click());
     });
   });
 
@@ -2258,7 +2258,7 @@ Terra.describeViewports('Select', ['tiny'], () => {
 
     describe('is touch accessible tag should open when clicking on it', () => {
       it('should open on click', () => {
-        browser.click('[data-terra-select]');
+        $('[data-terra-select]').click();
       });
 
       it('should display open dropdown', () => {
@@ -2282,7 +2282,7 @@ Terra.describeViewports('Select', ['tiny'], () => {
       });
 
       it('combobox should open the dropdown by clicking the toggle', () => {
-        browser.click('#allowclear:last-child');
+        $('#allowclear:last-child').click();
       });
 
       it('should display open dropdown', () => {
@@ -2290,7 +2290,7 @@ Terra.describeViewports('Select', ['tiny'], () => {
       });
 
       it('combobox should select the first option', () => {
-        browser.click('#terra-select-option-blue');
+        $('#terra-select-option-blue').click();
       });
 
       it('should display selected option', () => {
@@ -2298,11 +2298,11 @@ Terra.describeViewports('Select', ['tiny'], () => {
       });
 
       it('combobox should open the dropdown by clicking the toggle again', () => {
-        browser.click('#allowclear:last-child');
+        $('#allowclear:last-child').click();
       });
 
       it('combobox should select the clear option', () => {
-        browser.click('#terra-select-option-');
+        $('#terra-select-option-').click();
       });
 
       it('should display selected clear option', () => {
@@ -2322,7 +2322,7 @@ Terra.describeViewports('Select', ['tiny'], () => {
       });
 
       it('tag controlled should open the dropdown by clicking the toggle', () => {
-        browser.click('[data-terra-select-combobox]');
+        $('[data-terra-select-combobox]').click();
       });
 
       it('should display open dropdown', () => {
@@ -2330,7 +2330,7 @@ Terra.describeViewports('Select', ['tiny'], () => {
       });
 
       it('tag controlled should select the first option', () => {
-        browser.click('#terra-select-option-blue');
+        $('#terra-select-option-blue').click();
       });
 
       it('should display selected option', () => {
@@ -2348,7 +2348,7 @@ Terra.describeViewports('Select', ['tiny'], () => {
       });
 
       it('should open the dropdown by clicking the toggle', () => {
-        browser.click('#opt-group:last-child');
+        $('#opt-group:last-child').click();
       });
 
       it('should display open dropdown', () => {
@@ -2356,7 +2356,7 @@ Terra.describeViewports('Select', ['tiny'], () => {
       });
 
       it('should select the first option', () => {
-        browser.click('#terra-select-option-blue');
+        $('#terra-select-option-blue').click();
       });
 
       it('should display selected option', () => {
@@ -2445,11 +2445,11 @@ Terra.describeViewports('Select', ['tiny'], () => {
     it('open the dropdown by clicking the toggle', () => {
       /* global $ */
       const frame = $('#frmSelectFrame');
-      frame.waitForVisible();
+      frame..waitForDisplayed();
       browser.frame(frame.value);
       browser.scroll(0, 700);
-      browser.click('#frmSelectSingle');
-      browser.moveToObject('#frmSelectSingle');
+      $('#frmSelectSingle').click();
+      $('#frmSelectSingle').moveTo();
     });
 
     it('should display opened form-select', () => {
@@ -2461,9 +2461,9 @@ Terra.describeViewports('Select', ['tiny'], () => {
       browser.execute(function scrollOptionIntoView() {
         document.getElementById('terra-select-option-17').scrollIntoView();
       });
-      browser.moveToObject('#terra-select-option-17');
-      browser.click('#terra-select-option-17');
-      browser.click('#frmSelectSingle');
+      $('#terra-select-option-17').moveTo();
+      $('#terra-select-option-17').click();
+      $('#frmSelectSingle').click();
     });
 
     it('should display opened form-select with selected-option', () => {
@@ -2493,7 +2493,7 @@ Terra.describeViewports('Select', ['tiny'], () => {
     });
 
     it('Tag should open and search', () => {
-      browser.click('[data-terra-select-combobox]');
+      $('[data-terra-select-combobox]').click();
       browser.keys(['T', 'a', 'g']);
     });
 
@@ -2507,16 +2507,16 @@ Terra.describeViewports('Select', ['tiny'], () => {
 
     describe('default should hover first option after reopening while clicking root to close', () => {
       it('default should open the dropdown by clicking the select', () => {
-        browser.click('[data-terra-select]');
-        browser.click('#root');
-        browser.click('[data-terra-select]');
+        $('[data-terra-select]').click();
+        $('#root').click();
+        $('[data-terra-select]').click();
       });
 
       it('should hover first option after reopening while clicking root to close', () => {
         Terra.validates.element('open-dropdown-hover-check', { selector: '#root' });
       });
 
-      after(() => browser.click('#root'));
+      after(() => $('#root').click());
     });
   });
 });

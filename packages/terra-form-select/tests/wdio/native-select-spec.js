@@ -7,20 +7,21 @@ Terra.describeViewports('Native Select', ['tiny'], () => {
     });
 
     it('should apply hover to the select', () => {
-      browser.moveToObject('#select-id', 5, 5);
+      $('#select-id').moveTo({ xOffset: 5, yOffset: 5 });
 
       Terra.validates.element('hover');
     });
 
     it('should set focus to the select', () => {
-      browser.click('#root', 0, 0);
+      $('#root').click(0, 0);
+      // browser.click('#root', 0, 0);
       browser.keys('Tab');
 
       Terra.validates.element('focus');
     });
 
     it('should apply hover and focus to the select', () => {
-      browser.moveToObject('#select-id', 5, 5);
+      $('#select-id').moveTo({ xOffset: 5, yOffset: 5 });
 
       Terra.validates.element('hover-and-focus');
     });
@@ -34,20 +35,21 @@ Terra.describeViewports('Native Select', ['tiny'], () => {
     });
 
     it('should apply hover to the select', () => {
-      browser.moveToObject('#select-id', 5, 5);
+      $('#select-id').moveTo({ xOffset: 5, yOffset: 5 });
 
       Terra.validates.element('hover');
     });
 
     it('should not set focus to the select', () => {
-      browser.click('#root', 0, 0);
+      $('#root').click(0, 0);
+      // browser.click('#root', 0, 0);
       browser.keys('Tab');
 
       Terra.validates.element('focus');
     });
 
     it('should not apply hover or focus to the select', () => {
-      browser.moveToObject('#select-id', 5, 5);
+      $('#select-id').moveTo({ xOffset: 5, yOffset: 5 });
 
       Terra.validates.element('hover-and-focus');
     });
@@ -61,20 +63,21 @@ Terra.describeViewports('Native Select', ['tiny'], () => {
     });
 
     it('should apply hover to the select', () => {
-      browser.moveToObject('#select-id', 5, 5);
+      $('#select-id').moveTo({ xOffset: 5, yOffset: 5 });
 
       Terra.validates.element('hover');
     });
 
     it('should set focus to the select', () => {
-      browser.click('#root', 0, 0);
+      $('#root').click(0, 0);
+      // browser.click('#root', 0, 0);
       browser.keys('Tab');
 
       Terra.validates.element('focus');
     });
 
     it('should apply hover and focus to the select', () => {
-      browser.moveToObject('#select-id', 5, 5);
+      $('#select-id').moveTo({ xOffset: 5, yOffset: 5 });
 
       Terra.validates.element('hover-and-focus');
     });
@@ -88,20 +91,21 @@ Terra.describeViewports('Native Select', ['tiny'], () => {
     });
 
     it('should apply hover to the select', () => {
-      browser.moveToObject('#select-id', 5, 5);
+      $('#select-id').moveTo({ xOffset: 5, yOffset: 5 });
 
       Terra.validates.element('hover');
     });
 
     it('should set focus to the select', () => {
-      browser.click('#root', 0, 0);
+      $('#root').click(0, 0);
+      // browser.click('#root', 0, 0);
       browser.keys('Tab');
 
       Terra.validates.element('focus');
     });
 
     it('should apply hover and focus to the select', () => {
-      browser.moveToObject('#select-id', 5, 5);
+      $('#select-id').moveTo({ xOffset: 5, yOffset: 5 });
 
       Terra.validates.element('hover-and-focus');
     });
@@ -115,20 +119,21 @@ Terra.describeViewports('Native Select', ['tiny'], () => {
     });
 
     it('should apply hover to the select', () => {
-      browser.moveToObject('#select-id', 5, 5);
+      $('#select-id').moveTo({ xOffset: 5, yOffset: 5 });
 
       Terra.validates.element('hover');
     });
 
     it('should set focus to the select', () => {
-      browser.click('#root', 0, 0);
+      $('#root').click(0, 0);
+      // browser.click('#root', 0, 0);
       browser.keys('Tab');
 
       Terra.validates.element('focus');
     });
 
     it('should apply hover and focus to the select', () => {
-      browser.moveToObject('#select-id', 5, 5);
+      $('#select-id').moveTo({ xOffset: 5, yOffset: 5 });
 
       Terra.validates.element('hover-and-focus');
     });
@@ -142,20 +147,21 @@ Terra.describeViewports('Native Select', ['tiny'], () => {
     });
 
     it('should apply hover to the select', () => {
-      browser.moveToObject('#select-id', 5, 5);
+      $('#select-id').moveTo({ xOffset: 5, yOffset: 5 });
 
       Terra.validates.element('hover');
     });
 
     it('should set focus to the select', () => {
-      browser.click('#root', 0, 0);
+      $('#root').click(0, 0);
+      // browser.click('#root', 0, 0);
       browser.keys('Tab');
 
       Terra.validates.element('focus');
     });
 
     it('should apply hover and focus to the select', () => {
-      browser.moveToObject('#select-id', 5, 5);
+      $('#select-id').moveTo({ xOffset: 5, yOffset: 5 });
 
       Terra.validates.element('hover-and-focus');
     });
@@ -169,20 +175,21 @@ Terra.describeViewports('Native Select', ['tiny'], () => {
     });
 
     it('should apply hover to the select', () => {
-      browser.moveToObject('#select-id', 5, 5);
+      $('#select-id').moveTo({ xOffset: 5, yOffset: 5 });
 
       Terra.validates.element('hover');
     });
 
     it('should set focus to the select', () => {
-      browser.click('#root', 0, 0);
+      $('#root').click(0, 0);
+      // browser.click('#root', 0, 0);
       browser.keys('Tab');
 
       Terra.validates.element('focus');
     });
 
     it('should apply hover and focus to the select', () => {
-      browser.moveToObject('#select-id', 5, 5);
+      $('#select-id').moveTo({ xOffset: 5, yOffset: 5 });
 
       Terra.validates.element('hover-and-focus');
     });

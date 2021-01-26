@@ -7,13 +7,13 @@ Terra.describeViewports('Select Field', ['tiny'], () => {
     });
 
     it('should open the dropdown by clicking the toggle', () => {
-      browser.click('#select-field:last-child');
+      $('#select-field:last-child').click();
 
       Terra.validates.element('open-dropdown', { selector: '#root' });
     });
 
     it('should select the first option', () => {
-      browser.click('#terra-select-option-xSmall');
+      $('#terra-select-option-xSmall').click();
 
       Terra.validates.element('selected-option');
     });
@@ -45,7 +45,7 @@ Terra.describeViewports('Select Field', ['tiny'], () => {
     });
 
     it('should open the dropdown by clicking the toggle', () => {
-      browser.click('#select-field:last-child');
+      $('#select-field:last-child').click();
 
       Terra.validates.element('open-dropdown', { selector: '#root' });
     });
@@ -66,31 +66,31 @@ Terra.describeViewports('Select Field', ['tiny'], () => {
     });
 
     it('should open the dropdown by clicking the toggle', () => {
-      browser.click('[data-terra-select-combobox]');
+      $('[data-terra-select-combobox]').click();
 
       Terra.validates.element('open-dropdown', { selector: '#root' });
     });
 
     it('should select the first option', () => {
-      browser.click('#terra-select-option-blue');
+      $('#terra-select-option-blue').click();
 
       Terra.validates.element('selected-first-option', { selector: '#root' });
     });
 
     it('should select the second option', () => {
-      browser.click('#terra-select-option-cyan');
+      $('#terra-select-option-cyan').click();
 
       Terra.validates.element('max-selection-count-reached', { selector: '#root' });
     });
 
     it('should unselect the second option', () => {
-      browser.click('#terra-select-option-cyan');
+      $('#terra-select-option-cyan').click();
 
       Terra.validates.element('unselect-second-option', { selector: '#root' });
     });
 
     it('should select the second option again', () => {
-      browser.click('#terra-select-option-green');
+      $('#terra-select-option-green').click();
 
       Terra.validates.element('max-selection-count-reached-again', { selector: '#root' });
     });
@@ -121,14 +121,14 @@ Terra.describeViewports('Select Field', ['tiny'], () => {
     });
 
     it('should open the dropdown by clicking the toggle', () => {
-      browser.click('[data-terra-select-combobox]');
+      $('[data-terra-select-combobox]').click();
 
       Terra.validates.element('open-dropdown', { selector: '#root' });
     });
 
     it('should select the first option', () => {
-      browser.click('#terra-select-option-blue');
-      browser.click('#terra-select-option-cyan');
+      $('#terra-select-option-blue').click();
+      $('#terra-select-option-cyan').click();
 
       Terra.validates.element('max-selection-count-reached', { selector: '#root' });
     });
@@ -136,7 +136,7 @@ Terra.describeViewports('Select Field', ['tiny'], () => {
     it('should show the max selection option', () => {
       browser.keys('x');
 
-      Terra.validates.screenshot('max-selection-option', { selector: '#root' });
+      Terra.validates.element('max-selection-option', { selector: '#root' });
     });
   });
 
@@ -148,7 +148,7 @@ Terra.describeViewports('Select Field', ['tiny'], () => {
     });
 
     it('should open the dropdown by clicking the toggle', () => {
-      browser.click('#search:last-child');
+      $('#search:last-child').click();
     });
 
     it('select should enter a free text entry', () => {
@@ -166,7 +166,7 @@ Terra.describeViewports('Select Field', ['tiny'], () => {
     });
 
     it('default should open the dropdown by clicking the toggle', () => {
-      browser.click('#comboboxField:last-child');
+      $('#comboboxField:last-child').click();
 
       Terra.validates.element('combobox-field-dropdown-max-height', { selector: '#root' });
     });
@@ -180,7 +180,7 @@ Terra.describeViewports('Select Field', ['tiny'], () => {
     });
 
     it('default should open the dropdown by clicking the toggle', () => {
-      browser.click('[data-terra-form-select-toggle]');
+      $('[data-terra-form-select-toggle]').click();
 
       Terra.validates.element('multi-select-dropdown-max-height', { selector: '#root' });
     });
@@ -194,7 +194,7 @@ Terra.describeViewports('Select Field', ['tiny'], () => {
     });
 
     it('default should open the dropdown by clicking the toggle', () => {
-      browser.click('#searchSelectField:last-child');
+      $('#searchSelectField:last-child').click();
 
       Terra.validates.element('search-select-dropdown-max-height', { selector: '#root' });
     });
@@ -208,7 +208,7 @@ Terra.describeViewports('Select Field', ['tiny'], () => {
     });
 
     it('default should open the dropdown by clicking the toggle', () => {
-      browser.click('#selectField:last-child');
+      $('#selectField:last-child').click();
 
       Terra.validates.element('select-field-dropdown-max-height', { selector: '#root' });
     });
@@ -222,7 +222,7 @@ Terra.describeViewports('Select Field', ['tiny'], () => {
     });
 
     it('default should open the dropdown by clicking the toggle', () => {
-      browser.click('#singleSelectField:last-child');
+      $('#singleSelectField:last-child').click();
 
       Terra.validates.element('single-select-dropdown-max-height', { selector: '#root' });
     });
@@ -236,7 +236,7 @@ Terra.describeViewports('Select Field', ['tiny'], () => {
     });
 
     it('default should open the dropdown by clicking the toggle', () => {
-      browser.click('[data-terra-form-select-toggle]');
+      $('[data-terra-form-select-toggle]').click();
 
       Terra.validates.element('tag-select-dropdown-max-height', { selector: '#root' });
     });
