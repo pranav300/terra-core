@@ -28,8 +28,8 @@ Terra.describeViewports('Image', ['medium'], () => {
   describe('Loading', () => {
     before(() => {
       browser.url('/raw/tests/terra-image/image/image-loading');
-      browser.waitForExist('#loadedImage');
-      browser.waitForExist('#errorImage');
+      $('#loadedImage').waitForExist();
+      $('#errorImage').waitForExist('#errorImage');
     });
 
     it('should display loading Image', () => {
