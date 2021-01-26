@@ -26,9 +26,9 @@ Terra.describeViewports('Tag', ['tiny'], () => {
     });
 
     it('tabs to tag', () => {
-      browser.click('#root');
+      $('#root').click();
       browser.keys('Tab');
-      expect(browser.hasFocus('#on-click')).to.be.true;
+      expect($('#on-click')).toBeFocused()
       Terra.validates.element('focus');
     });
   });

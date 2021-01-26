@@ -7,7 +7,7 @@ Terra.describeViewports('Show Hide', ['medium'], () => {
     });
 
     it('should expand to full text', () => {
-      browser.click('button');
+      $('button').click();
     });
 
     it('should display expanded Show Hide', () => {
@@ -15,14 +15,14 @@ Terra.describeViewports('Show Hide', ['medium'], () => {
     });
 
     it('should re-collapse the text', () => {
-      browser.click('button');
-      browser.click('#root');
+      $('button').click();
+      $('#root').click();
     });
 
     describe('Focus', () => {
       it('has focus', () => {
         browser.keys(['Tab']);
-        expect(browser.hasFocus('button')).to.be.true;
+        expect($('button')).toBeFocused();
       });
 
       it('should display focus on Show Hide', () => {
@@ -31,13 +31,13 @@ Terra.describeViewports('Show Hide', ['medium'], () => {
 
       it('removes focus', () => {
         browser.keys(['Tab']);
-        expect(browser.hasFocus('button')).to.be.false;
+        expect($('button')).not.toBeFocused();
       });
     });
 
     describe('Active', () => {
       it('is active', () => {
-        browser.moveToObject('button');
+        $('button').moveTo();
         browser.buttonDown();
       });
 
@@ -47,7 +47,7 @@ Terra.describeViewports('Show Hide', ['medium'], () => {
 
       it('release button press', () => {
         browser.buttonUp();
-        browser.moveToObject('#root');
+        $('#root').moveTo();
       });
     });
   });
@@ -60,7 +60,7 @@ Terra.describeViewports('Show Hide', ['medium'], () => {
     });
 
     it('should expand to full text', () => {
-      browser.click('button');
+      $('button').click();
     });
 
     it('should display expanded Show Hide', () => {
@@ -92,7 +92,7 @@ Terra.describeViewports('Show Hide', ['medium'], () => {
     });
 
     it('should expand to full text', () => {
-      browser.click('button');
+      $('button').click();
     });
 
     it('should display expanded Show Hide', () => {
@@ -108,7 +108,7 @@ Terra.describeViewports('Show Hide', ['medium'], () => {
     });
 
     it('should expand to full text', () => {
-      browser.click('button');
+      $('button').click();
     });
 
     it('should display expanded Show Hide', () => {
@@ -124,7 +124,7 @@ Terra.describeViewports('Show Hide', ['medium'], () => {
     });
 
     it('should expand to full text', () => {
-      browser.click('button');
+      $('button').click();
     });
 
     it('should display expanded Show Hide', () => {
@@ -135,7 +135,7 @@ Terra.describeViewports('Show Hide', ['medium'], () => {
   describe('Long button text', () => {
     before(() => {
       browser.url('/raw/tests/terra-show-hide/show-hide/long-button-text-show-hide');
-      browser.moveToObject('#root', 0, 700); // move cursor to remove focus styles
+      $('#root').moveTo({ xOffset: 0, yOffset: 700 }); // move cursor to remove focus styles
     });
 
     it('should display collapsed Show Hide', () => {
@@ -143,7 +143,7 @@ Terra.describeViewports('Show Hide', ['medium'], () => {
     });
 
     it('should expand to full text', () => {
-      browser.click('button');
+      $('button').click();
     });
 
     it('should display expanded Show Hide', () => {
