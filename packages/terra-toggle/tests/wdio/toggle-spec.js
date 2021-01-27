@@ -6,27 +6,27 @@ Terra.describeViewports('Toggle', ['medium'], () => {
     });
 
     it('expands', () => {
-      browser.click('#trigger-toggle'); // Open toggle
+      $('#trigger-toggle').click(); // Open toggle
       Terra.validates.element('expanded');
     });
   });
 
   it('displays an opened toggle', () => {
     browser.url('/raw/tests/terra-toggle/toggle/open-toggle');
-    browser.moveToObject('#root', 0, 0);
+    $('#root').moveTo({ xOffset: 0, yOffset: 0 });
     Terra.validates.element('opened');
   });
 
   describe('Animated', () => {
     it('disables focusable elements when closed', () => {
       browser.url('/raw/tests/terra-toggle/toggle/animated-toggle');
-      expect(browser.getCssProperty('#toggle', 'visibility').value).to.equal('hidden');
+      expect($('#toggle').getCSSProperty('visibility').value).toEqual('hidden');
     });
 
     it('enables focusable elements when opened', () => {
-      browser.click('#trigger-toggle'); // Open toggle
-      browser.waitForVisible('#toggle');
-      expect(browser.getCssProperty('#toggle', 'visibility').value).to.equal('visible');
+      $('#trigger-toggle').click(); // Open toggle
+      $('#toggle').waitForDisplayed();
+      expect($('#toggle').getCSSProperty('visibility').value).toEqual('visible');
     });
   });
 });

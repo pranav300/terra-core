@@ -2,17 +2,17 @@ Terra.describeViewports('ToggleSectionHeader', ['huge'], () => {
   describe('Default', () => {
     it('displays a closed toggle', () => {
       browser.url('/raw/tests/terra-toggle-section-header/toggle-section-header/default-toggle-section-header');
-      browser.moveToObject('#root'); // move to prevent hover styles
+      $('#root').moveTo(); // move to prevent hover styles
       Terra.validates.element('closed');
     });
 
     it('validates hover styles', () => {
-      browser.moveToObject('#root', 0, 0); // move to cause hover styles
+      $('#root').moveTo({ xOffset: 0, yOffset: 0 }); // move to cause hover styles
       Terra.validates.element('hover');
     });
 
     it('opens the toggle', () => {
-      browser.leftClick('#root', 0, 0);
+      $('#root').click({ button: "left", x: 0, y: 0 });
       Terra.validates.element('open');
     });
   });
@@ -24,12 +24,12 @@ Terra.describeViewports('ToggleSectionHeader', ['huge'], () => {
     });
 
     it('validates hover styles', () => {
-      browser.moveToObject('#root', 0, 0); // move to cause hover styles
+      $('#root').moveTo({ xOffset: 0, yOffset: 0 }); // move to cause hover styles
       Terra.validates.element('hover');
     });
 
     it('opens the toggle', () => {
-      browser.leftClick('#root', 0, 0);
+      $('#root').click({ button: "left", x: 0, y: 0 });
       Terra.validates.element('open');
     });
   });
@@ -41,7 +41,7 @@ Terra.describeViewports('ToggleSectionHeader', ['huge'], () => {
     });
 
     it('Toggles on button click', () => {
-      browser.click('#toggle');
+      $('#toggle').click();
       Terra.validates.element('programmatically toggles the toggle-section-header');
     });
   });
