@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[652],{1316:function(a,e,i){"use strict";i.r(e);var t=i(0),n=i.n(t),s=i(162),c=i(861);e.default=function(){return n.a.createElement(s.default,{id:"is-deceased-image-avatar",alt:"user",image:c.a,isDeceased:!0,initials:"JS"})}},861:function(a,e,i){"use strict";e.a=i.p+"51d085f765a7361bab659ffffdb9bb46.jpg"}}]);

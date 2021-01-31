@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[771],{1582:function(e,n,a){"use strict";a.r(n);var t=a(0),r=a.n(t),c=a(210);n.default=function(){return r.a.createElement("div",null,r.a.createElement(c.a,{ariaLabel:"Alert"}))}}}]);

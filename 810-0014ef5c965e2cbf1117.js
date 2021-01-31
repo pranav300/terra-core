@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[810],{1683:function(t,e,n){"use strict";n.r(e);var a=n(0),i=n.n(a),o=n(99),r=[{text:"OK",key:1,id:"button1"},{text:"Cancel",key:2,id:"button2"}];e.default=function(){return i.a.createElement(o.default,{id:"statusView",variant:"error",title:"500",message:"An exception was thrown.",buttonAttrs:r})}}}]);

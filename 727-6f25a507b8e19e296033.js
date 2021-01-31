@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[727],{1389:function(e,n,t){"use strict";t.r(n);var c=t(0),a=t.n(c),o=t(816);n.default=function(){return a.a.createElement(o.c,{title:"Placeholder"})}}}]);
