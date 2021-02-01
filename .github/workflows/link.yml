@@ -13,8 +13,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - run: npm ci
-
       - name: Run
         id: action
         continue-on-error: true
