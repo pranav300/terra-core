@@ -1,0 +1,27 @@
+
+name: "C/I"
+
+on:
+  push:
+    branches:
+      - '**'
+
+jobs:
+  ci:
+    name: Run
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - run: npm ci
+
+      - name: Run
+        id: action
+        continue-on-error: true
+        uses: ./
+        with:
+          baseUrl: "https://localhost:8080"
+          files: "packages/src/terra-dev-site/*/*.mdx"
+
+      - run: |
+          echo ${{ toJson(steps.action.outputs.annotations) }}
