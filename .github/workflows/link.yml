@@ -18,8 +18,8 @@ jobs:
         continue-on-error: true
         uses: ./
         with:
-          baseUrl: "https://localhost:8080"
-          files: "packages/src/terra-dev-site/*/*.mdx"
+          baseUrl: "https://hashicorp.com"
+          files: "packages/*/src/terra-dev-site/*/*.mdx"
 
       - run: |
           echo ${{ toJson(steps.action.outputs.annotations) }}
